@@ -1,0 +1,15 @@
+CATEGORY=1
+DOT=2
+DASH=3
+WS=4
+YEAR=5
+NUM2=6
+IN=7
+OUT=8
+INTEGER=9
+ID=10
+'category'=1
+'.'=2
+'-'=3
+'IN'=7
+'OUT'=8

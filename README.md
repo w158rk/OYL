@@ -16,10 +16,10 @@
     <img src="docs/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">PWMS</h3>
+  <h3 align="center">OYL</h3>
 
   <p align="center">
-    个人使用的仓库管理系统
+    整理你的生活（Organize Your Life）
     <br />
     <a href="https://github.com/w158rk/pwms"><strong>浏览文档 »</strong></a>
     <br />
@@ -67,7 +67,7 @@
 
 <!-- [![产品名称截图][产品截图]](https://example.com) -->
 
-个人仓库管理系统，或个人物品管理系统，管理你凌乱的生活
+个人物品管理系统，管理你凌乱的生活
 
 
 ### 构建

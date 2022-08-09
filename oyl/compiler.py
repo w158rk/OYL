@@ -42,6 +42,8 @@ class Compiler(OYLVisitor):
         number = int(ctx.number().getText())
         unit = ctx.unit().getText()
         tx = Transaction(self.date, name, number, unit)
+        if not ctx.note() is None:
+            tx.note = ctx.note().getText()
 
         if not ctx.IN() is None:
             tx.in_or_out = Transaction.InOrOut.IN

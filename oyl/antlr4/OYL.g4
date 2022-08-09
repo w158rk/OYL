@@ -1,25 +1,23 @@
 grammar OYL;
 
 CATEGORY: 'category';
-DOT: '.';
-DASH : '-';
-WS : [ \u000D\t\n] -> skip ;
-YEAR: [0-9][0-9][0-9][0-9];
-NUM2: [0-9][0-9];
+SEMICOLON: ';' ;
+WS : [ \u000C\t\r\n] -> skip ;
+DATE: [0-9][0-9][0-9][0-9] '-' [0-9][0-9] '-' [0-9][0-9];
 IN: 'IN';
 OUT: 'OUT';
 INTEGER: [0-9]+;
-ID : (~ [ \n\u000D\t.0-9-])(~ [ \n\u000D\t.])*;
+ID : (~ [ \n\u000D\t0-9-;])(~ [ \n\u000D\t;])*;
 
-records: category* record*;
-category: CATEGORY name code attrname* DOT;
-record: date? (IN|OUT) name number unit attrvalue* (DOT note)? DOT;
+records: (category | record)*;
+category: CATEGORY name code attrname* SEMICOLON;
+record: date? (IN|OUT) name number unit attrvalue* (SEMICOLON note)? SEMICOLON;
 name: ID;
-code: INTEGER;
+code: ID;
 attrname: ID;
 
-date: YEAR DASH NUM2 DASH NUM2;
+date: DATE;
 number: INTEGER;
 unit: ID;
 note: ID;
-attrvalue: ID | INTEGER;
+attrvalue: ID | INTEGER | DATE;

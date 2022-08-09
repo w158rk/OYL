@@ -1,6 +1,11 @@
 import click
 from oyl.compiler import compile
 
+def run_body(filename):
+    warehouse = compile(filename)
+    df_map = warehouse.to_df_map()
+    return df_map
+
 @click.group()
 def cli():
     pass
@@ -8,11 +13,8 @@ def cli():
 @click.command()
 @click.argument("filename")
 def run(filename):
-    warehouse = compile(filename)
-    df_map = warehouse.to_df_map()
-    for k,v in df_map.items():
-        print(k)
-        print(v)
+    df_map = run_body(filename)
+    print(df_map)
 
 cli.add_command(run)
 

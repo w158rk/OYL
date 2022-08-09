@@ -13,3 +13,7 @@ class Transaction:
         self.name = name
         self.number = number
         self.unit = unit
+        self.note = ""
+
+    def __repr__(self) -> str:
+        return str(self.__dict__)

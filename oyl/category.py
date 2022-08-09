@@ -20,6 +20,7 @@ class Category:
                 tx.date,
                 tx.in_or_out,
                 tx.number,
-                *[getattr(tx, name) for name in self.attr_names]
+                *[getattr(tx, name) for name in self.attr_names],
+                tx.note
             ])
-        return pd.DataFrame(data, columns=["日期", "IN/OUT", "数量", *self.attr_names])
+        return pd.DataFrame(data, columns=["日期", "IN/OUT", "数量", *self.attr_names, "备注"])
